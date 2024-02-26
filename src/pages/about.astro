@@ -1,10 +1,37 @@
 ---
+import { literal } from "astro/zod";
 import Layout from "../layouts/Layout.astro";
+const pageTitle = "About Me";
+
+const identity = {
+  firstName: "David",
+  country: "México",
+  occupation: "Technical Writer",
+  hobbies: ["photography", "birdwatching", "baseball"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+
+const happy = true;
+const finished = false;
+const goal = 3;
+
+function hobbies_render() {
+  let render = `${identity.hobbies.length} of my hobbies are:`;
+  for (let i = 0; i < identity.hobbies.length; i++) {
+    if (i < identity.hobbies.length - 1) {
+      render += ` ${identity.hobbies[i]}`;
+    } else {
+      render += ` and ${identity.hobbies[i]}`;
+    }
+  }
+  return render;
+}
 ---
 
-<Layout title="Blog Tutorial">
+<Layout title={pageTitle}>
   <main>
-    <h1>About me</h1>
+    <h1>{pageTitle}</h1>
     <h2>... !And mi new Astro site</h2>
 
     <p>
@@ -12,11 +39,33 @@ import Layout from "../layouts/Layout.astro";
       page of my website, And is the first page that I have constructed by
       myself
     </p>
-
-    
+    <p>Here are a few facts about me:</p>
+    <ul>
+      <li>My name is: {identity.firstName}.</li>
+      <li>
+        I live in {identity.country} and I work as a {identity.occupation}.
+      </li>
+      {identity.hobbies.length >= 2 && <li>{hobbies_render}</li>}
+      {
+        identity.hobbies.length === 1 && (
+          <li>In my free time I like to {identity.hobbies}</li>
+        )
+      }
+    </ul>
+    <p>My Skills are:</p>
+    <ul>
+      {skills.map((skill) => <li>{skill}</li>)}
+    </ul>
+    {happy && <p>I am happy to be learning Astro!</p>}
+    {finished && <p>I finished this tutorial!</p>}
+    {
+      goal === 3 ? (
+        <p>My goal is to finish in 3 days.</p>
+      ) : (
+        <p>My goal is to finish in {goal} days</p>
+      )
+    }
   </main>
 </Layout>
 
-<style>
-  
-</style>
+<style></style>
