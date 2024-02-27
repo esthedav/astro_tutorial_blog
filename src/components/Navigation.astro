@@ -1,0 +1,27 @@
+---
+import Hamburguer from "./Hamburguer.astro";
+
+import "../styles/global.css";
+---
+
+<header>
+  <Hamburguer />
+  <nav class="nav-links">
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/blog/">Blog</a>
+  </nav>
+</header>
+<style>
+  header {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+</style>
+<script>
+  document.querySelector(".hamburguer").addEventListener("click", () => {
+    document.querySelector(".nav-links").classList.toggle("expanded");
+  });
+</script>

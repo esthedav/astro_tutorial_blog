@@ -1,0 +1,125 @@
+:root {
+  /* Light Color palette */
+  --background-primary-light: #FFF7F1;
+  --background-secundary-light: #FFE4C9;
+  --primary-color-light: #E78895;
+  --secondary-color-light: #BED1CF;
+  /* Dark Color palette */
+  --background-primary-dark: #070F2B;
+  --background-secundary-dark: #1B1A55;
+  --primary-color-dark: #9290C3;
+  --secondary-color-dark: #535C91;
+  --h1-color-dark: #a229b8;
+}
+
+html {
+  background-color: var(--background-primary-dark);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 80ch;
+  padding: 1rem;
+  padding-top: 104px;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 1rem 0;
+  font-size: 2.5rem;
+  color: var(--h1-color-dark);
+}
+
+/* nav styles */
+.hamburguer {
+  padding-right: 20px;
+  cursor: pointer;
+  padding: 8px;
+  padding-left: 4px;
+  margin-bottom: 0;
+  background-color: var(--background-secundary-dark);
+
+}
+
+.hamburguer .line {
+  display: block;
+  width: 40px;
+  height: 5px;
+  margin-bottom: 5px;
+  background-color: var(--secondary-color-light);
+}
+
+.nav-links {
+  width: 100%;
+  background-color: var(--background-secundary-dark);
+  display: none;
+  margin: 0;
+}
+
+.nav-links a {
+  display: block;
+  text-align: center;
+  padding: 10px 0;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  color: #fff;
+  transition: 0.3s ease-in;
+}
+
+.expanded {
+  display: flex;
+  padding-inline: 16px;
+  gap: 12px;
+}
+
+@media screen and (min-width: 636px) {
+  .nav-links {
+    padding-inline: 5em;
+    display: flex;
+    background-color: var(--background-secundary-dark);
+    /* background: none; */
+  }
+
+  .nav-links a {
+    display: inline-block;
+    font-size: 1.4rem;
+    padding: 15px 20px;
+  }
+
+  .hamburguer {
+    display: none;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  html {
+    background-color: var(--background-primary-light);
+  }
+
+  .hamburguer {
+    background-color: var(--background-secundary-light);
+  }
+
+  .nav-links {
+    background-color: var(--background-secundary-light);
+  }
+
+  .nav-links a:hover,
+  .nav-links a:focus {
+    color: var(--background-secundary-dark);
+    transition: 0.3s ease-in;
+  }
+
+}

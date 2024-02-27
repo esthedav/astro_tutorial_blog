@@ -1,6 +1,8 @@
 ---
-import { literal } from "astro/zod";
+import "../styles/global.css";
+
 import Layout from "../layouts/Layout.astro";
+
 const pageTitle = "About Me";
 
 const identity = {
@@ -15,6 +17,11 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 const happy = true;
 const finished = false;
 const goal = 3;
+
+// CSS variables
+const skillColor = "#7fdbca";
+const fontWeight = "bold";
+const textCase = "uppercase";
 
 function hobbies_render() {
   let render = `${identity.hobbies.length} of my hobbies are:`;
@@ -32,7 +39,7 @@ function hobbies_render() {
 <Layout title={pageTitle}>
   <main>
     <h1>{pageTitle}</h1>
-    <h2>... !And mi new Astro site</h2>
+    <h2>... !And my new Astro site</h2>
 
     <p>
       I am working in the introductory tutorial of Astro. This is the second
@@ -54,7 +61,7 @@ function hobbies_render() {
     </ul>
     <p>My Skills are:</p>
     <ul>
-      {skills.map((skill) => <li>{skill}</li>)}
+      {skills.map((skill) => <li class="skills">{skill}</li>)}
     </ul>
     {happy && <p>I am happy to be learning Astro!</p>}
     {finished && <p>I finished this tutorial!</p>}
@@ -68,4 +75,10 @@ function hobbies_render() {
   </main>
 </Layout>
 
-<style></style>
+<style define:vars={{ skillColor, fontWeight, textCase }}>
+  .skills {
+    color: var(--skillColor);
+    font-weight: var(--fontWeight);
+    text-transform: var(--textCase);
+  }
+</style>
