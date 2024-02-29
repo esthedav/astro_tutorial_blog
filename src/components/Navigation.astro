@@ -10,6 +10,7 @@ import "../styles/global.css";
     <a href="/">Home</a>
     <a href="/about/">About</a>
     <a href="/blog/">Blog</a>
+    <a href="/tags/">Tags</a>
   </nav>
 </header>
 <style>
@@ -21,7 +22,5 @@ import "../styles/global.css";
   }
 </style>
 <script>
-  document.querySelector(".hamburguer").addEventListener("click", () => {
-    document.querySelector(".nav-links").classList.toggle("expanded");
-  });
+  import "../scripts/menu";
 </script>

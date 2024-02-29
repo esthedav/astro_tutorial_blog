@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
 
-import Layout from "../layouts/Layout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "About Me";
 
@@ -36,9 +36,8 @@ function hobbies_render() {
 }
 ---
 
-<Layout title={pageTitle}>
+<BaseLayout title={pageTitle}>
   <main>
-    <h1>{pageTitle}</h1>
     <h2>... !And my new Astro site</h2>
 
     <p>
@@ -73,7 +72,7 @@ function hobbies_render() {
       )
     }
   </main>
-</Layout>
+</BaseLayout>
 
 <style define:vars={{ skillColor, fontWeight, textCase }}>
   .skills {
