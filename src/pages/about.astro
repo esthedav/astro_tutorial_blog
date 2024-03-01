@@ -15,11 +15,10 @@ const identity = {
 const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 
 const happy = true;
-const finished = false;
+const finished = true;
 const goal = 3;
 
 // CSS variables
-const skillColor = "#7fdbca";
 const fontWeight = "bold";
 const textCase = "uppercase";
 
@@ -74,9 +73,8 @@ function hobbies_render() {
   </main>
 </BaseLayout>
 
-<style define:vars={{ skillColor, fontWeight, textCase }}>
+<style define:vars={{ fontWeight, textCase }}>
   .skills {
-    color: var(--skillColor);
     font-weight: var(--fontWeight);
     text-transform: var(--textCase);
   }

@@ -1,5 +1,6 @@
 ---
 import Hamburguer from "./Hamburguer.astro";
+import ThemeIcon from "./ThemeIcon.astro";
 
 import "../styles/global.css";
 ---
@@ -8,10 +9,11 @@ import "../styles/global.css";
   <Hamburguer />
   <nav class="nav-links">
     <a href="/">Home</a>
-    <a href="/about/">About</a>
+    <a href="/about/" data-astro-reload>About</a>
     <a href="/blog/">Blog</a>
     <a href="/tags/">Tags</a>
   </nav>
+  <ThemeIcon />
 </header>
 <style>
   header {

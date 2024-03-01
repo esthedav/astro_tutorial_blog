@@ -1,13 +1,12 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import TagsNav from "../../components/TagsNav.astro";
 import "../../styles/global.css";
 
-const allPost = await Astro.glob("../posts/*.md");
+const allPost = await getCollection("posts");
 
-const uniqueTags = [
-  ...new Set(allPost.map((post) => post.frontmatter.tags).flat()),
-];
+const uniqueTags = [...new Set(allPost.map((post) => post.data.tags).flat())];
 
 const pageTitle = "Tag Index";
 ---
