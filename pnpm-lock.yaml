@@ -14,6 +14,9 @@ dependencies:
   astro:
     specifier: ^4.4.4
     version: 4.4.4
+  htmx.org:
+    specifier: ^1.9.10
+    version: 1.9.10
   preact:
     specifier: ^10.19.6
     version: 10.19.6
@@ -1815,6 +1818,10 @@ packages:
 
   /html-void-elements@3.0.0:
     resolution: {integrity: sha512-bEqo66MRXsUGxWHV5IP0PUiAWwoEjba4VCzg0LjFJBpchPaTfyfCKTG6bc5F8ucKec3q5y6qOdGyYTSBEvhCrg==}
+    dev: false
+
+  /htmx.org@1.9.10:
+    resolution: {integrity: sha512-UgchasltTCrTuU2DQLom3ohHrBvwr7OqpwyAVJ9VxtNBng4XKkVsqrv0Qr3srqvM9ZNI3f1MmvVQQqK7KW/bTA==}
     dev: false
 
   /http-cache-semantics@4.1.1:

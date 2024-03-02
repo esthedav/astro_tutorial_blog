@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Greeting from "../components/Greeting";
+import StockTable from "../components/StockTable.astro";
 
 const pageTitle = "Home Page";
 ---
@@ -9,5 +10,17 @@ const pageTitle = "Home Page";
   <main>
     <h2>Mi awesome blog subtitle</h2>
     <Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there"]} />
+    <StockTable />
+
+    <div id="parent-div">Target here</div>
+
+    <button
+      hx-post="/partials/clicked/"
+      hx-trigger="click"
+      hx-target="#parent-div"
+      hx-swap="innerHTML"
+    >
+      Click Me!
+    </button>
   </main>
 </BaseLayout>
